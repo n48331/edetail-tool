@@ -1,0 +1,270 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-backface-visibility: hidden;
+    -webkit-user-drag: none;
+}
+body {
+    overflow: hidden;
+    background-color: #000000 !important;
+  }
+input {
+    -webkit-user-select: text !important;
+    /* Chrome, Opera, Safari */
+    -moz-user-select: text !important;
+    /* Firefox 2+ */
+    -ms-user-select: text !important;
+    /* IE 10+ */
+    user-select: text !important;
+    /* Standard syntax */
+}
+.settingOptRV{
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 52%;
+}
+.settingOptRV {
+  display: inline-block;
+  margin: 0.4em;
+  width: 2em;
+  height: 2em;
+  background: white;
+  border-radius: 50%;
+  border: 0.57em solid gray;
+  box-sizing: border-box;
+}
+.settingOptRV:before, .settingOptRV:after {
+  content: "×";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "times new roman";
+  font-weight: bold;
+  font-size: 5em;
+  color: gray;
+}
+.settingOptRV:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.hg{
+    background-color: rgb(255 255 0 / 47%);
+    color: red;
+    font-weight: bold;
+}
+
+#container {
+    /*background-color: white;*/
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#bottommenu{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 765px;
+    height: 44px;
+    z-index: 3;
+}
+
+
+.bottommenu1{
+    position: absolute;
+    left: 6px;
+    top: 0px;
+    width: 188px;
+    height: 43px;
+}
+.bottommenu2{
+    position: absolute;
+    left: 195px;
+    top: 0px;
+    width: 184px;
+    height: 43px;
+}
+.bottommenu3{
+    position: absolute;
+    left: 380px;
+    top: 0px;
+    width: 135px;
+    height: 43px;
+}
+.bottommenu4{
+    position: absolute;
+    left: 518px;
+    top: 0px;
+    width: 108px;
+    height: 43px;
+}
+.bottommenu5{
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 138px;
+    height: 43px;
+}
+.bottommenu6{
+    position: absolute;
+    right: 146px;
+    top: 0px;
+    width: 140px;
+    height: 56px;
+}
+.bottommenu7{
+    position: absolute;
+    right: 14px;
+    top: 0px;
+    width: 126px;
+    height: 56px;
+}
+
+.leftArrow {
+    position: absolute;
+    top: 349px;
+    left: 0px;
+    height: 58px;
+    width: 28px;
+    cursor: pointer;
+}
+.leftArrow1 {
+    position: absolute;
+    top: 349px;
+    left: 0px;
+    height: 58px;
+    width: 28px;
+    cursor: pointer;
+}
+
+.rightArrow {
+    position: absolute;
+    top: 348px;
+    right: 0;
+    height: 59px;
+    width: 29px;
+    cursor: pointer;
+}
+
+#mainWrapper{
+    -ms-transform-origin: top left;
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      width: 1024px;
+      height: 768px;
+      position: relative;
+}
+.drzlx_logo {
+    position: absolute;
+    bottom: 0px;
+    left: 63px;
+    height: 81px;
+    width: 181px;
+    cursor: pointer;
+}
+#piButton {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    height: 41px;
+    width: 33px;
+    cursor: pointer;
+}
+
+.top_menu {
+    width: 1024px;
+    height: 42px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+
+.top_menu1 {
+    position: absolute;
+    top: 0px;
+    left: 93px;
+    height: 41px;
+    width: 90px;
+    cursor: pointer;
+}
+.top_menu2 {
+    position: absolute;
+    top: 0px;
+    left: 184px;
+    height: 41px;
+    width: 109px;
+    cursor: pointer;
+}
+.top_menu3 {
+    position: absolute;
+    top: 0px;
+    left: 294px;
+    height: 41px;
+    width: 101px;
+    cursor: pointer;
+}
+.top_menu4 {
+    position: absolute;
+    top: 0px;
+    left: 396px;
+    height: 41px;
+    width: 144px;
+    cursor: pointer;
+}
+.top_menu5 {
+    position: absolute;
+    top: 0px;
+    left: 541px;
+    height: 41px;
+    width: 43px;
+    cursor: pointer;
+}
+.top_menu6 {
+    position: absolute;
+    top: 0px;
+    left: 585px;
+    height: 41px;
+    width: 45px;
+    cursor: pointer;
+}
+.top_menu7 {
+    position: absolute;
+    top: 0px;
+    left: 632px;
+    height: 41px;
+    width: 104px;
+    cursor: pointer;
+}
+.top_menu8 {
+    position: absolute;
+    top: 0px;
+    left: 739px;
+    height: 41px;
+    width: 126px;
+    cursor: pointer;
+}
+.top_menu9 {
+    position: absolute;
+    top: 0px;
+    right: 116px;
+    height: 41px;
+    width: 41px;
+    cursor: pointer;
+}
+.top_menu10 {
+    position: absolute;
+    top: 0px;
+    right: 60px;
+    height: 41px;
+    width: 55px;
+    cursor: pointer;
+}

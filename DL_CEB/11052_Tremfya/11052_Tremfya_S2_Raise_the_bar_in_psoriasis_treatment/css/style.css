@@ -1,0 +1,54 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.smpc_btn {
+    position: absolute;
+    top: 0;
+    right: 28px;
+    height: 38px;
+    width: 58px;
+    cursor: pointer;
+}
+.home_btn {
+    position: absolute;
+    top: 0px;
+    right: 139px;
+    height: 38px;
+    width: 44px;
+    cursor: pointer;
+}
+.s2_popup {
+    position: absolute;
+    bottom: 118px;
+    right: 37px;
+    height: 45px;
+    width: 174px;
+    cursor: pointer;
+}
+
+.popup_box_1 {
+	background: url("../img/Slide_8.jpg") no-repeat;
+	background-size: 1024px 768px;
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	top: 0;
+	display: none;
+	left: 0;
+}
+.popup_box_1 .close {
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	right: 51px;
+	top: 62px;
+	cursor: pointer;
+}
