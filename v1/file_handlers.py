@@ -3,7 +3,7 @@ import os
 
 def generateCssJs(destination_folder):
     css = '''
-    # mainWrapper {
+    #mainWrapper {
         overflow: hidden;
         position: absolute;
         left: 0;
@@ -30,10 +30,7 @@ def generateCssJs(destination_folder):
     js_file.close()
 
 
-def createHtml(project_name, destination_folder):
-    popup = '''
-
-    '''
+def createHtml(folder_name, project_name, destination_folder, sl):
     js = '''
 	<script type="text/javascript">
 			$(function () {
@@ -55,7 +52,7 @@ def createHtml(project_name, destination_folder):
 		<link rel="stylesheet" href="css/style.css">
 		<script type="text/javascript" src="../shared/{project_name}_SharedResource/common/config.js"></script>
 		<script>
-			currentSlide = "s1";
+			currentSlide = "s{sl}";
 			document.addEventListener("touchmove", function (e) {{ e.preventDefault() }});
 		</script>
 		<script src="../shared/{project_name}_SharedResource/common/framework.js" charset="utf-8"></script>
@@ -78,7 +75,7 @@ def createHtml(project_name, destination_folder):
 	</body>
 	</html>
 	'''
-    f = open(f"{destination_folder}/{project_name}.html", "w+")
+    f = open(f"{destination_folder}/{folder_name}.html", "w+")
     f.write(text)
     f.close()
 
@@ -94,7 +91,7 @@ def renameSharedFiles(src, project_name):
               f'{src}/{project_name}_SharedResource/{project_name}_SharedResource-thumb.jpg')
 
 
-def createConfig(project_name, slide_names):
+def createConfig(project_name, slide_names, dest):
     # for name in slide_names:
     slides = ''
     s = ''
@@ -124,6 +121,6 @@ def createConfig(project_name, slide_names):
             }};
 
 	'''
-    f = open(f"config.js", "w+")
+    f = open(f"{dest}/config.js", "w+")
     f.write(config)
     f.close()

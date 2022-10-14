@@ -1,7 +1,7 @@
 var config = {
-  project: "1453_DA",
-  slides: {
-  
+        project: "1234_AB",
+        slides: {
+        
         s1: {
         name: "s1",
         zipFile: "1234_AB_S1_hi_hello.zip",
@@ -22,16 +22,16 @@ var config = {
         zipFile: "1234_AB_S4_what_a_good_day.zip",
         },
         
-  },
-  coreflow: {
-    /*First flow should have all the slides*/
-    f0: {
-      content: ["s1","s2","s3","s4",],
-      name: "Flow 0",
-    },
-   
-  },
+        },
+        coreflow: {
+            /*First flow should have all the slides*/
+            f0: {
+            content: ["s1","s2","s3","s4",],
+            name: "Flow 0",
+            },
+        
+            },
 
-};
+            };
 
 	
