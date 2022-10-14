@@ -2,8 +2,7 @@ import os
 
 
 def generateCssJs(destination_folder):
-    css = '''
-    #mainWrapper {
+    css = '''#mainWrapper {
         overflow: hidden;
         position: absolute;
         left: 0;
@@ -16,9 +15,16 @@ def generateCssJs(destination_folder):
     }
     '''
 
-    js = '''
-    $(document).ready(function () {
-
+    js = '''$(document).ready(function () {
+	/*$('.bottompopup').unbind().bind('touchstart tap', function () {
+		$('#infopopup').show();
+		$('#mainWrapper').addClass("not_to_swipe");
+	});
+	$('#infoclose').unbind().bind('touchstart tap', function () {
+		$('#infopopup').hide();
+		$('#mainWrapper').removeClass("not_to_swipe");
+		return false;
+	});*/
     })
     '''
 
@@ -30,7 +36,15 @@ def generateCssJs(destination_folder):
     js_file.close()
 
 
-def createHtml(folder_name, project_name, destination_folder, sl):
+def createHtml(id, folder_name, project_name, destination_folder, sl, popupCount):
+
+    popup = ''
+    for i in range(popupCount):
+        popup += f'''<div class="s{i+1}_popup"></div>
+        <div class="popup_box_{i+1} noSwipe">
+            <div class="close"></div>
+        </div>'''
+
     js = '''
 	<script type="text/javascript">
 			$(function () {
@@ -41,12 +55,11 @@ def createHtml(folder_name, project_name, destination_folder, sl):
 			});
 		</script>
 	'''
-    text = f'''
-	<!DOCTYPE html>
+    text = f'''<!DOCTYPE html>
 	<html>
 	<head>
 		<meta charset="utf-8">
-		<title>{project_name}</title>
+		<title>{id}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel="stylesheet" href="../shared/{project_name}_SharedResource/common/mainstyle.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -57,9 +70,10 @@ def createHtml(folder_name, project_name, destination_folder, sl):
 		</script>
 		<script src="../shared/{project_name}_SharedResource/common/framework.js" charset="utf-8"></script>
 	</head>
-	<body>
+	<body class="carousel">
 		<div id="mainWrapper">
         <div data-info="" data-slide="s" data-flow="f0" class="btn goToButton"></div>
+        {popup}
 		</div>
 		<script src="../shared/{project_name}_SharedResource/common/adaptive/zepto.min.js"></script>
 		<script src="../shared/{project_name}_SharedResource/common/adaptive/underscore-min.js"></script>

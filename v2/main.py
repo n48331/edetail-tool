@@ -11,18 +11,25 @@ shared_src = "./boiler_plate/shared"
 shared_dest = f"./{project_name}/shared"
 config_dest = f"./{project_name}/shared/{project_name}_SharedResource/common"
 slide_names = []
-
+project_id = project_name.split('_')[0]
 
 for i in range(data.max_row-1):
     folder_name = f'{project_name}_S{str(i+1)}_{(data[f"B{i+2}"].value).replace(" ","_")}'
     slide_names.append(folder_name)
     destination_folder = f"./{project_name}/{folder_name}"
     shutil.copytree(source_folder, destination_folder)
-    createHtml(folder_name, project_name, destination_folder, i+1)
+    popup = data[f"D{i+2}"].value
+    createHtml(project_id, folder_name, project_name,
+               destination_folder, i+1, popup)
     gCJ(destination_folder)
 # ========= Images ===========
+    img_name = f'{data[f"C{i+2}"].value}'
     shutil.copy(
-        f'{image_folder}/{data[f"C{i+2}"].value}.jpg', f'{destination_folder}/img/main.jpg')
+        f'{image_folder}/main/{img_name}.jpg', f'{destination_folder}/img/main.jpg')
+    shutil.copy(
+        f'{image_folder}/full/{img_name}.jpg', f'{destination_folder}/{folder_name}-full.jpg')
+    shutil.copy(
+        f'{image_folder}/thumb/{img_name}.jpg', f'{destination_folder}/{folder_name}-thumb.jpg')
 
 shutil.copytree(shared_src, shared_dest)
 renameSharedFiles(shared_dest, project_name)
