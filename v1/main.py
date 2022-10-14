@@ -12,7 +12,7 @@ for i in range(data.max_row-1):
     folder_name = f'{project_name}_S{str(i+1)}_{(data[f"B{i+2}"].value).replace(" ","_")}'
     destination_folder = f"./{project_name}/{folder_name}"
     shutil.copytree(source_folder, destination_folder)
-    createHtml(project_name, destination_folder)
+    createHtml(folder_name, destination_folder)
     gCJ(destination_folder)
 
 print('Folders created')

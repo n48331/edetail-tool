@@ -1,6 +1,3 @@
-import os
-
-
 def generateCssJs(destination_folder):
     css = '''
     #mainWrapper {
@@ -32,10 +29,6 @@ def generateCssJs(destination_folder):
     })
     '''
 
-    os.makedirs(os.path.dirname(
-        f"{destination_folder}/css/"), exist_ok=True)
-    os.makedirs(os.path.dirname(
-        f"{destination_folder}/js/"), exist_ok=True)
     css_file = open(f"{destination_folder}/css/style.css", "w+")
     css_file.write(css)
     css_file.close()
@@ -45,6 +38,9 @@ def generateCssJs(destination_folder):
 
 
 def createHtml(project_name, destination_folder):
+    popup = '''
+    
+    '''
     js = '''
 	<script type="text/javascript">
 			$(function () {
@@ -73,7 +69,7 @@ def createHtml(project_name, destination_folder):
 	</head>
 	<body>
 		<div id="mainWrapper">
-
+        <div data-info="" data-slide="s" data-flow="f0" class="btn goToButton"></div>
 		</div>
 		<script src="../shared/{project_name}_SharedResource/common/adaptive/zepto.min.js"></script>
 		<script src="../shared/{project_name}_SharedResource/common/adaptive/underscore-min.js"></script>
