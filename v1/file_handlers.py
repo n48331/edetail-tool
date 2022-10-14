@@ -1,6 +1,9 @@
+import os
+
+
 def generateCssJs(destination_folder):
     css = '''
-    #mainWrapper {
+    # mainWrapper {
         overflow: hidden;
         position: absolute;
         left: 0;
@@ -16,16 +19,6 @@ def generateCssJs(destination_folder):
     js = '''
     $(document).ready(function () {
 
-        /*$('.bottompopup').unbind().bind('touchstart tap', function () {
-            $('#infopopup').show();
-            $('#mainWrapper').addClass("not_to_swipe");
-        });
-        $('#infoclose').unbind().bind('touchstart tap', function () {
-            $('#infopopup').hide();
-            $('#mainWrapper').removeClass("not_to_swipe");
-            return false;
-        });*/
-        
     })
     '''
 
@@ -39,7 +32,7 @@ def generateCssJs(destination_folder):
 
 def createHtml(project_name, destination_folder):
     popup = '''
-    
+
     '''
     js = '''
 	<script type="text/javascript">
@@ -48,7 +41,7 @@ def createHtml(project_name, destination_folder):
 				$("#menu01, #menu02, #menu03, #menu, #menuHover, #menuList, #menu04, #ref, #spc, #pi").bind("touchmove", function (e) {  //Add all the links to prevent the touchmove
 					e.preventDefault();
 				});
-			});   
+			});
 		</script>
 	'''
     text = f'''
@@ -87,4 +80,50 @@ def createHtml(project_name, destination_folder):
 	'''
     f = open(f"{destination_folder}/{project_name}.html", "w+")
     f.write(text)
+    f.close()
+
+
+def renameSharedFiles(src, project_name):
+    os.rename(f'{src}/SharedResource',
+              f'{src}/{project_name}_SharedResource')
+    os.rename(f'{src}/{project_name}_SharedResource/SharedResource.html',
+              f'{src}/{project_name}_SharedResource/{project_name}_SharedResource.html')
+    os.rename(f'{src}/{project_name}_SharedResource/full.jpg',
+              f'{src}/{project_name}_SharedResource/{project_name}_SharedResource-full.jpg')
+    os.rename(f'{src}/{project_name}_SharedResource/thumb.jpg',
+              f'{src}/{project_name}_SharedResource/{project_name}_SharedResource-thumb.jpg')
+
+
+def createConfig(project_name, slide_names):
+    # for name in slide_names:
+    slides = ''
+    s = ''
+    for i in range(len(slide_names)):
+        s += f'"s{str(i+1)}",'
+        slides += f'''
+        s{i+1}: {{
+        name: "s{i+1}",
+        zipFile: "{slide_names[i]}.zip",
+        }},
+        '''
+
+    config = f'''var config = {{
+        project: "{project_name}",
+        slides: {{
+        {slides}
+        }},
+        coreflow: {{
+            /*First flow should have all the slides*/
+            f0: {{
+            content: [{s}],
+            name: "Flow 0",
+            }},
+        
+            }},
+
+            }};
+
+	'''
+    f = open(f"config.js", "w+")
+    f.write(config)
     f.close()
