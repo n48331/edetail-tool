@@ -2,8 +2,52 @@ import os
 from PIL import Image
 
 
-def generateCssJs(destination_folder):
-    css = '''#mainWrapper {
+def generateCssJs(destination_folder, popupCount, sl):
+    popup_css = ''
+    popup_js = ''
+    if (popupCount == None):
+        popupCount = 0
+    for i in range(popupCount):
+        popup_css += f'''.s{sl}_popup {{
+        background-color:red;
+        opacity:.5;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        }}
+
+        .popup_box_{i+1} {{
+            background: url("../img/Slide_1.jpg") no-repeat;
+            background-size: 1024px 768px;
+            position: absolute;
+            width: 1024px;
+            height: 768px;
+            top: 0;
+            display: none;
+            left: 0;
+        }}
+        .popup_box_{i+1} .close {{
+            background-color:red;
+            opacity:.5;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 51px;
+            top: 62px;
+            cursor: pointer;
+        }}'''
+        for i in range(popupCount):
+            popup_js += f'''	$(".s{sl}_popup").click(function(){{
+            $(".popup_box_{i+1}").fadeIn();
+            }});
+            $(".popup_box_{i+1} .close").click(function(){{
+                $(".popup_box_{i+1}").fadeOut();
+            }});
+        '''
+    css = f'''#mainWrapper {{
         overflow: hidden;
         position: absolute;
         left: 0;
@@ -13,20 +57,13 @@ def generateCssJs(destination_folder):
         background: url("../img/main.jpg");
         background-size: cover;
         background-repeat: no-repeat;
-    }
+    }}
+    {popup_css}
     '''
 
-    js = '''$(document).ready(function () {
-	/*$('.bottompopup').unbind().bind('touchstart tap', function () {
-		$('#infopopup').show();
-		$('#mainWrapper').addClass("not_to_swipe");
-	});
-	$('#infoclose').unbind().bind('touchstart tap', function () {
-		$('#infopopup').hide();
-		$('#mainWrapper').removeClass("not_to_swipe");
-		return false;
-	});*/
-    })
+    js = f'''$(document).ready(function () {{
+	 {popup_js}
+    }})
     '''
 
     css_file = open(f"{destination_folder}/css/style.css", "w+")
@@ -43,7 +80,7 @@ def createHtml(id, folder_name, project_name, destination_folder, sl, popupCount
     if (popupCount == None):
         popupCount = 0
     for i in range(popupCount):
-        popup += f'''<div class="s{i+1}_popup"></div>
+        popup += f'''<div class="s{sl}_popup"></div>
         <div class="popup_box_{i+1} noSwipe">
             <div class="close"></div>
         </div>'''
@@ -97,15 +134,49 @@ def createHtml(id, folder_name, project_name, destination_folder, sl, popupCount
     f.close()
 
 
-def renameSharedFiles(src, project_name):
-    os.rename(f'{src}/SharedResource',
-              f'{src}/{project_name}_SharedResource')
-    os.rename(f'{src}/{project_name}_SharedResource/SharedResource.html',
-              f'{src}/{project_name}_SharedResource/{project_name}_SharedResource.html')
-    os.rename(f'{src}/{project_name}_SharedResource/full.jpg',
-              f'{src}/{project_name}_SharedResource/{project_name}_SharedResource-full.jpg')
-    os.rename(f'{src}/{project_name}_SharedResource/thumb.jpg',
-              f'{src}/{project_name}_SharedResource/{project_name}_SharedResource-thumb.jpg')
+def generateSharedHtml(project_id, src):
+    html = f'''<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>{project_id}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../shared/{project_id}_SharedResource/common/mainstyle.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+            document.addEventListener("touchmove",function(e){{e.preventDefault()}});
+        </script>
+    </head>
+
+    <body>
+        <div id="mainWrapper">
+            
+        </div>
+        <script src="../shared/{project_id}_SharedResource/common/jquery-1.10.2.min.js"></script>
+        <script src="../shared/{project_id}_SharedResource/common/jquery.swipe-events.js" charset="utf-8"></script>
+        <script src="../shared/{project_id}_SharedResource/common/jquery.touchSwipe.min.js"></script> 
+        <script src="../shared/{project_id}_SharedResource/common/clm-library-1.4.js" charset="utf-8"></script> 
+        <script type="text/javascript" src="common/config.js"></script>
+        <script src="js/slideScript.js" charset="utf-8"></script>
+    </body>
+
+    </html>'''
+    # os.rename(f'{src}/{project_name}_SharedResource/SharedResource.html',
+    #               f'{src}/{project_name}_SharedResource/{project_name}_SharedResource.html')
+    f = open(f"{src}", "w+")
+    f.write(html)
+    f.close()
+
+
+def renameSharedFiles(src, project_name, img_name):
+    if not os.path.exists(f'{src}/{project_name}_SharedResource'):
+        os.rename(f'{src}/SharedResource',
+                  f'{src}/{project_name}_SharedResource')
+    imageResize(img_name, (1024, 768),
+                f'{src}/{project_name}_SharedResource/{project_name}_SharedResource-full.jpg')
+    imageResize(img_name, (200, 150),
+                f'{src}/{project_name}_SharedResource/{project_name}_SharedResource-thumb.jpg')
+    return f'{src}/{project_name}_SharedResource/{project_name}_SharedResource.html'
 
 
 def createConfig(project_name, slide_names, dest):
