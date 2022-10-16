@@ -8,6 +8,7 @@ import openpyxl
 import shutil
 from file_handlers import createHtml, createConfig, renameSharedFiles, generateCssJs as gCJ, imageResize as IR, generateSharedHtml
 import os
+import ctypes
 
 
 class Error(Exception):
@@ -24,6 +25,10 @@ class imageFileError(Error):
 
 class popupError(Error):
     pass
+
+
+def Mbox(title, text, style):
+    return ctypes.windll.user32.MessageBoxW(0, text, title, style)
 
 
 try:
@@ -83,11 +88,26 @@ try:
 
 except imageFileError:
     print('ERROR : images - Check slide names in Excel or "images" folder is missing')
+    Mbox('ERROR',
+         "images - Check slide names in Excel or 'images' folder is missing", 0x30)
 except projectNameError:
     print('ERROR : Project name should not be empty in Excel')
+    Mbox('ERROR',
+         "Project name should not be empty in Excel", 0x30)
 except popupError:
     print('ERROR : Popup images are missing or wrong names in Excel ')
+    Mbox('ERROR',
+         "Popup images are missing or wrong names in Excel", 0x30)
 except FileNotFoundError:
     print(
         "ERROR : Make sure ['images','boiler_plate','data.xlsx'] are present in same folder")
+    Mbox('ERROR',
+         "Make sure ['images','boiler_plate','data.xlsx'] are present in same folder", 0x20)
+except:
+    Mbox(f'ERROR !',
+         'Something went wrong.....', 0x20)
+
+
 print('Process Finished')
+Mbox(f'Hurray Process Finished successfully !',
+     'Check output folder for output.....', 0x40)
