@@ -1,0 +1,165 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.s4_popupbtn1 {
+    position: absolute;
+    top: 373px;
+    left: 120px;
+    height: 42px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.popup_box_1 {
+    background: url("../img/Slide_5.jpg") no-repeat;
+    background-size: 1024px 768px;
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+    top: 0;
+    display: none;
+    left: 0;
+    z-index: 10;
+}
+
+.popup_box_1 .close {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    cursor: pointer;
+}
+
+.s4_popupbtn2 {
+
+    position: absolute;
+    bottom: 391px;
+    right: 442px;
+    height: 42px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.popup_box_2 {
+    background: url("../img/Slide_6.jpg") no-repeat;
+    background-size: 1024px 768px;
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+    top: 0;
+    display: none;
+    left: 0;
+    z-index: 10;
+}
+
+.popup_box_2 .close {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    cursor: pointer;
+}
+
+.s4_popupbtn3 {
+
+    position: absolute;
+    bottom: 228px;
+    right: 442px;
+    height: 42px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.popup_box_3 {
+    background: url("../img/Slide_7.jpg") no-repeat;
+    background-size: 1024px 768px;
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+    top: 0;
+    display: none;
+    left: 0;
+    z-index: 10;
+}
+
+.popup_box_3 .close {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    cursor: pointer;
+}
+
+.s4_popupbtn4 {
+
+    position: absolute;
+    bottom: 228px;
+    right: 114px;
+    height: 42px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.popup_box_4 {
+    background: url("../img/Slide_8.jpg") no-repeat;
+    background-size: 1024px 768px;
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+    top: 0;
+    display: none;
+    left: 0;
+    z-index: 10;
+}
+
+.popup_box_4 .close {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    cursor: pointer;
+}
+
+.s4_popupbtn5 {
+
+    position: absolute;
+    bottom: 391px;
+    right: 114px;
+    height: 42px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.popup_box_5 {
+    background: url("../img/Slide_9.jpg") no-repeat;
+    background-size: 1024px 768px;
+    position: absolute;
+    width: 1024px;
+    height: 768px;
+    top: 0;
+    display: none;
+    left: 0;
+    z-index: 10;
+}
+
+.popup_box_5 .close {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    cursor: pointer;
+}

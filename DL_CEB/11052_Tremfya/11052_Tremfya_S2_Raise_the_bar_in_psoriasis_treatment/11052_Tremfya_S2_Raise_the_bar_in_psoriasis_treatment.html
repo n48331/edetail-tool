@@ -1,54 +1,118 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>11052</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../shared/11052_SharedResource/common/mainstyle.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Carousel external files -->
+    <link rel="stylesheet" href="../shared/11052_SharedResource/common/carousel/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../shared/11052_SharedResource/common/carousel/css/carousel-style.css">
+    <!-- Carousel external files -->
     <script type="text/javascript" src="../shared/11052_SharedResource/common/config.js"></script>
     <script>
         currentSlide = "s2";
-        document.addEventListener("touchmove",function(e){e.preventDefault()});
+        document.addEventListener("touchmove", function (e) { e.preventDefault() });
     </script>
     <script src="../shared/11052_SharedResource/common/framework.js" charset="utf-8"></script>
 </head>
 
-<body class="carousel">
+<body>
+
     <div id="mainWrapper">
-      <div class="home_btn goToButton" data-slide="s1" data-flow="f0" data-info=""></div>
-      <div class="smpc_btn goToPi" data-slide="s13" data-flow="f0" data-info=""></div>
-      <div class="s2_popup"></div>
-      <div class="popup_box_1 noSwipe">
-        <div class="close"></div>            
-     </div>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false"
+            data-wrap="false">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <section class="section-1">
+                        <div class="Body_wrapper">
+                            <div class="left_arrow goToButton" data-slide="s3" data-flow="f0" data-info=""></div>
+                            <div class="right_arrow" data-target="#carousel-example-generic" data-slide-to="1"></div>
+                            <div class="s2_popup1"></div>
+                            <div class="popup_box_1 noSwipe">
+                                <div class="left_arrow1 goToButton" data-slide="s4" data-flow="f0" data-info=""></div>
+                                <div class="right_arrow1"> </div>
+                                <div class="s4_popup3"></div>
+                                <div class="popup_box_2 noSwipe">
+                                    <div class="left_arrow2"></div>
+                                    <div class="close1"></div>
+                                </div>
+                                <div class="close"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="item">
+                    <section class="section-2">
+                        <div class="Body_wrapper">
+                            <div class="left_arrow" data-target="#carousel-example-generic" data-slide-to="0"></div>
+                            <div class="right_arrow " data-target="#carousel-example-generic" data-slide-to="2"></div>
+                            <div class="s2_popup2"></div>
+                            <div class="popup_box_1 noSwipe">
+                                <div class="left_arrow22" data-target="#carousel-example-generic" data-slide-to="1">
+                                </div>
+                                <div class="right_arrow1"> </div>
+                                <div class="s4_popup3"></div>
+                                <div class="popup_box_2 noSwipe">
+                                    <div class="left_arrow2"></div>
+                                    <div class="close1"></div>
+                                </div>
+                                <div class="close"></div>
+                            </div>
+
+                        </div>
+
+                    </section>
+                </div>
+                <div class="item">
+                    <section class="section-3">
+                        <div class="Body_wrapper">
+                            <div class="left_arrow" data-target="#carousel-example-generic" data-slide-to="1"></div>
+                            <div class="right_arrow goToButton" data-slide="s5" data-flow="f0" data-info=""></div>
+                            <div class="s2_popup3"></div>
+                            <div class="popup_box_1 noSwipe">
+                                <div class="left_arrow33" data-target="#carousel-example-generic" data-slide-to="2">
+                                </div>
+                                <div class="right_arrow1"> </div>
+                                <div class="s4_popup3"></div>
+                                <div class="popup_box_2 noSwipe">
+                                    <div class="left_arrow2"></div>
+                                    <div class="close1"></div>
+                                </div>
+                                <div class="close"></div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+
     </div>
+
     <script src="../shared/11052_SharedResource/common/adaptive/zepto.min.js"></script>
     <script src="../shared/11052_SharedResource/common/adaptive/underscore-min.js"></script>
     <script src="../shared/11052_SharedResource/common/adaptive/adaptive.js"></script>
     <script src="../shared/11052_SharedResource/common/jquery-1.10.2.min.js"></script>
     <script src="../shared/11052_SharedResource/common/jquery.swipe-events.js" charset="utf-8"></script>
-    <script src="../shared/11052_SharedResource/common/jquery.touchSwipe.min.js"></script> 
-    <script src="../shared/11052_SharedResource/common/clm-library-1.4.js" charset="utf-8"></script> 
-    <script src="../shared/11052_SharedResource/common/baseScript.js" charset="utf-8"></script> 
+    <script src="../shared/11052_SharedResource/common/jquery.touchSwipe.min.js"></script>
+    <script src="../shared/11052_SharedResource/common/clm-library-1.4.js" charset="utf-8"></script>
+    <script src="../shared/11052_SharedResource/common/baseScript.js" charset="utf-8"></script>
     <script src="../shared/11052_SharedResource/common/customScript.js" charset="utf-8"></script>
+    <script src="../shared/11052_SharedResource/common/carousel/js/carouselScript.js" charset="utf-8"></script>
+    <script src="../shared/11052_SharedResource/common/carousel/js/bootstrap.min.js"></script>
     <script src="js/slideScript.js" charset="utf-8"></script>
-    <!-- <script type="text/javascript">
-        
-        $(document).ready(function () {
+    <script type="text/javascript">
 
+        $(document).ready(function () {
             // Carousel Individual item redirection
             var goToHome = localStorage.getItem("goToPrev");
-            if (goToHome != '' && goToHome != null)   {
-                // var item = goToHome - 1;
-                $(".item").removeClass('active');
-                $(".item:nth-child("+goToHome+")").addClass('active');
-                // console.log('aaaaaaaa', goToHome)
-                app.setsub_slide_localstorage(0);	
-            }
-           
+            app.Checksub_slide_localstorage(goToHome);
+
         }); 
-    </script> -->
+    </script>
 </body>
 
 </html>
