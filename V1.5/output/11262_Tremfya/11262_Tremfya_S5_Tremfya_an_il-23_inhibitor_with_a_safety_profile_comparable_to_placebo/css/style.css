@@ -30,7 +30,15 @@
 
 }
 
-.right_arrow1 {
+.Body_wrapper {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+
+.right_arrow {
     background-color: red;
     position: absolute;
     top: 359px;

@@ -1,0 +1,41 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+}
+
+.section-1 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/Slide_6.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-2 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background-color: #fff;
+    background: url("../img/Slide_7.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.Body_wrapper {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}

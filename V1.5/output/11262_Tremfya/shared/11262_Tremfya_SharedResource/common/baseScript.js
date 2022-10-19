@@ -5,12 +5,18 @@ $(document).ready(function () {
   } else {
     touchEvent = "click";
   }
+  var carSlide = config.carSlide;
 
   $("body").bind("touchmove", function (e) {
     e.preventDefault();
   });
 
-  $(document).swipe({
+  var swipeElement = "body";
+  if ($("body").hasClass("carousel")) {
+    swipeElement = ".carousel";
+  }
+  // console.log('swipeElement..', swipeElement);
+  $(swipeElement).swipe({
     //Generic swipe handler for all directions
     swipe: function (
       event,
@@ -24,21 +30,60 @@ $(document).ready(function () {
       //console.log($(event.target));
       switch (direction) {
         case "left":
-          //console.log(app.var);
           if (
-            !$("#overlay,#refpopup,#refclose,#api_popup,.not_to_swipe").is(
-              ":visible"
-            )
-          )
-            app.goNextSlide();
+            !$(
+              "#overlay,#refpopup,#refclose,#api_popup,.not_to_swipe, .swal2-container"
+            ).is(":visible")
+          ) {
+            if (carSlide.includes(app.var.currentSlide)) {
+              if ($("#carousel-example-generic").is(":visible")) {
+                var slideLength = $(
+                  "#carousel-example-generic .carousel-inner section"
+                ).length;
+                // console.log('slideLength..', slideLength);
+                if (
+                  $("#carousel-example-generic .section-" + slideLength)
+                    .parent(".item")
+                    .hasClass("active")
+                ) {
+                  app.goNextSlide();
+                } else {
+                  $(this).carousel("next");
+                  // checkCarousel();
+                }
+              }
+            } else {
+              app.goNextSlide();
+            }
+          }
+          // app.goNextSlide();
           break;
         case "right":
           if (
-            !$("#overlay,#refpopup,#refclose,#api_popup,.not_to_swipe").is(
-              ":visible"
-            )
-          )
-            app.goPrevSlide();
+            !$(
+              "#overlay,#refpopup,#refclose,#api_popup,.not_to_swipe, .swal2-container"
+            ).is(":visible")
+          ) {
+            if (carSlide.includes(app.var.currentSlide)) {
+              if ($("#carousel-example-generic").is(":visible")) {
+                var slideLength = 1;
+                // console.log('slideLength..', slideLength);
+                if (
+                  $("#carousel-example-generic .section-" + slideLength)
+                    .parent(".item")
+                    .hasClass("active")
+                ) {
+                  app.goPrevSlide();
+                } else {
+                  $(this).carousel("prev");
+                  // checkCarousel();
+                }
+              }
+            } else {
+              app.goPrevSlide();
+            }
+          }
+          // app.goPrevSlide();
           break;
         default:
           break;
@@ -50,8 +95,21 @@ $(document).ready(function () {
   /*$('.goToButton').unbind().bind('touchstart tap', function () {
 	    app.goToButton(this);
 	});*/
+  $(".goToPi")
+    .unbind()
+    .bind("touchend", function () {
+      // console.log("fix it");
+      app.goToPi(this);
+    });
+  $(".goToHomeButton")
+    .unbind()
+    .bind(touchEvent, function () {
+      // console.log('aaaa12311');
+      app.goToHomeButton(this);
+    });
   $(document).on(touchEvent, ".goToButton", function () {
     // console.log("fix it");
+    console.log("gotbutton", this);
     app.goToButton(this);
   });
 });
@@ -72,10 +130,11 @@ function pushDataToCRMDone() {
   console.log("tracked");
 }
 
+// NextGen testing tool
 if ("dev" == app.var.env) {
   if (
     ($("body").prepend(
-      "<button id='settingOptRV' class='settingOptRV'></button><div class='settingDetail' style='z-index:1; background-color:rgb(255 255 0 / 70%); color:red; position:absolute; padding: 10px; max-width:150px; word-break: break-all;'><h3 style='color:black'>NextGen eDetail</h3>Slide: <b>" +
+      "<button id='settingOptRV' class='settingOptRV'></button><div class='settingDetail' style='z-index:1; background-color:rgb(255 255 0 / 70%); color:red; position:absolute; padding: 10px; max-width:150px; word-break: break-all;display:none'><h3 style='color:black'>NextGen eDetail</h3>Slide: <b>" +
         app.var.currentSlide +
         "</b><br/>Flow: " +
         app.var.firstflow +
@@ -101,9 +160,11 @@ if ("dev" == app.var.env) {
     function t(t = 1) {
       1 == t
         ? ($(".goToButton").addClass("hg"),
-          $("#bottommenu > div").addClass("hg"))
+          $("div[data-info]").addClass("hgyellow"),
+          $("div[data-info=close]").addClass("hgred"))
         : ($(".goToButton").removeClass("hg"),
-          $("#bottommenu > div").removeClass("hg"));
+          $("div[data-info]").removeClass("hgyellow"),
+          $("div[data-info=close]").removeClass("hgred"));
     }
     function e() {
       $(".goToButton").each(function () {
