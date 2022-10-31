@@ -1,3 +1,4 @@
+from base64 import encode
 import os
 from PIL import Image
 import random
@@ -68,10 +69,12 @@ def generateCssJs(destination_folder, popups, sl):
     }})
     '''
 
-    css_file = open(f"{destination_folder}/css/style.css", "w+")
+    css_file = open(f"{destination_folder}/css/style.css",
+                    "w+", encoding='utf-8')
     css_file.write(css)
     css_file.close()
-    js_file = open(f"{destination_folder}/js/slideScript.js", "w+")
+    js_file = open(f"{destination_folder}/js/slideScript.js",
+                   "w+", encoding='utf-8')
     js_file.write(js)
     js_file.close()
 
@@ -103,14 +106,14 @@ def createHtml(id, folder_name, project_name, destination_folder, sl, popupCount
 		<meta charset="utf-8">
 		<title>{id}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<link rel="stylesheet" href="../shared/{project_name}_SharedResource/common/mainstyle.css">
+		<link rel="stylesheet" href="../shared/{id}_SharedResource/common/mainstyle.css">
 		<link rel="stylesheet" href="css/style.css">
-		<script type="text/javascript" src="../shared/{project_name}_SharedResource/common/config.js"></script>
+		<script type="text/javascript" src="../shared/{id}_SharedResource/common/config.js"></script>
 		<script>
 			currentSlide = "s{sl}";
 			document.addEventListener("touchmove", function (e) {{ e.preventDefault() }});
 		</script>
-		<script src="../shared/{project_name}_SharedResource/common/framework.js" charset="utf-8"></script>
+		<script src="../shared/{id}_SharedResource/common/framework.js" charset="utf-8"></script>
 	</head>
 	<body class="carousel">
 		<div id="mainWrapper">
@@ -122,21 +125,22 @@ def createHtml(id, folder_name, project_name, destination_folder, sl, popupCount
 		<div data-info="" data-slide="s8" data-flow="f0" class="nav_p14 goToButton"></div>
         {popup}
 		</div>
-		<script src="../shared/{project_name}_SharedResource/common/adaptive/zepto.min.js"></script>
-		<script src="../shared/{project_name}_SharedResource/common/adaptive/underscore-min.js"></script>
-		<script src="../shared/{project_name}_SharedResource/common/adaptive/adaptive.js"></script>
-		<script src="../shared/{project_name}_SharedResource/common/jquery-1.10.2.min.js"></script>
-		<script src="../shared/{project_name}_SharedResource/common/jquery.swipe-events.js" charset="utf-8"></script>
-		<script src="../shared/{project_name}_SharedResource/common/jquery.touchSwipe.min.js"></script>
-		<script src="../shared/{project_name}_SharedResource/common/clm-library-1.4.js" charset="utf-8"></script>
-		<script src="../shared/{project_name}_SharedResource/common/baseScript.js" charset="utf-8"></script>
-		<script src="../shared/{project_name}_SharedResource/common/customScript.js" charset="utf-8"></script>
+		<script src="../shared/{id}_SharedResource/common/adaptive/zepto.min.js"></script>
+		<script src="../shared/{id}_SharedResource/common/adaptive/underscore-min.js"></script>
+		<script src="../shared/{id}_SharedResource/common/adaptive/adaptive.js"></script>
+		<script src="../shared/{id}_SharedResource/common/jquery-1.10.2.min.js"></script>
+		<script src="../shared/{id}_SharedResource/common/jquery.swipe-events.js" charset="utf-8"></script>
+		<script src="../shared/{id}_SharedResource/common/jquery.touchSwipe.min.js"></script>
+		<script src="../shared/{id}_SharedResource/common/clm-library-1.4.js" charset="utf-8"></script>
+		<script src="../shared/{id}_SharedResource/common/baseScript.js" charset="utf-8"></script>
+		<script src="../shared/{id}_SharedResource/common/customScript.js" charset="utf-8"></script>
 		<script src="js/slideScript.js" charset="utf-8"></script>
 		{js}
 	</body>
 	</html>
 	'''
-    f = open(f"{destination_folder}/{folder_name}.html", "w+")
+    f = open(f"{destination_folder}/{folder_name}.html",
+             "w+", encoding='utf-8')
     f.write(text)
     f.close()
 
@@ -170,20 +174,20 @@ def generateSharedHtml(project_id, src):
     </html>'''
     # os.rename(f'{src}/{project_name}_SharedResource/SharedResource.html',
     #               f'{src}/{project_name}_SharedResource/{project_name}_SharedResource.html')
-    f = open(f"{src}", "w+")
+    f = open(f"{src}", "w+", encoding='utf-8')
     f.write(html)
     f.close()
 
 
-def renameSharedFiles(src, project_name, img_name):
-    if not os.path.exists(f'{src}/{project_name}_SharedResource'):
+def renameSharedFiles(src, project_id, img_name):
+    if not os.path.exists(f'{src}/{project_id}_SharedResource'):
         os.rename(f'{src}/SharedResource',
-                  f'{src}/{project_name}_SharedResource')
+                  f'{src}/{project_id}_SharedResource')
     imageResize(img_name, (1024, 768),
-                f'{src}/{project_name}_SharedResource/{project_name}_SharedResource-full.jpg')
+                f'{src}/{project_id}_SharedResource/{project_id}_SharedResource-full.jpg')
     imageResize(img_name, (200, 150),
-                f'{src}/{project_name}_SharedResource/{project_name}_SharedResource-thumb.jpg')
-    return f'{src}/{project_name}_SharedResource/{project_name}_SharedResource.html'
+                f'{src}/{project_id}_SharedResource/{project_id}_SharedResource-thumb.jpg')
+    return f'{src}/{project_id}_SharedResource/{project_id}_SharedResource.html'
 
 
 def createConfig(project_name, slide_names, dest):
@@ -209,14 +213,12 @@ def createConfig(project_name, slide_names, dest):
             f0: {{
             content: [{s}],
             name: "Flow 0",
+            }},      
             }},
-        
-            }},
-
             }};
 
 	'''
-    f = open(f"{dest}/config.js", "w+")
+    f = open(f"{dest}/config.js", "w+", encoding='utf-8')
     f.write(config)
     f.close()
 

@@ -35,15 +35,15 @@ try:
     book = openpyxl.load_workbook("./data.xlsx")
     data = book.active
     project_name = data['A2'].value
+    project_id = project_name.split('_')[0]
     if project_name == None or project_name == '':
         raise projectNameError
     source_folder = "./boiler_plate/slide"
     image_folder = "./images"
     shared_src = "./boiler_plate/shared"
     shared_dest = f"./output/{project_name}/shared"
-    config_dest = f"./output/{project_name}/shared/{project_name}_SharedResource/common"
+    config_dest = f"./output/{project_name}/shared/{project_id}_SharedResource/common"
     slide_names = []
-    project_id = project_name.split('_')[0]
 
     for i in range(data.max_row-1):
         folder_name = f'{project_name}_S{str(i+1)}_{(data[f"B{i+2}"].value).replace(" ","_")}'
@@ -75,13 +75,13 @@ try:
         try:
             for popup in popups:
                 IR(f'{image_folder}/{popup}.jpg', (2048, 1536),
-                   f'{destination_folder}/img/{popup}.jpg')
+                    f'{destination_folder}/img/{popup}.jpg')
         except:
             raise popupError
 
     if not os.path.exists(shared_dest):
         shutil.copytree(shared_src, shared_dest)
-    sharedHTML = renameSharedFiles(shared_dest, project_name,
+    sharedHTML = renameSharedFiles(shared_dest, project_id,
                                    f'{image_folder}/{data["C2"].value}.jpg')
     generateSharedHtml(project_id, sharedHTML)
     createConfig(project_name, slide_names, config_dest)
