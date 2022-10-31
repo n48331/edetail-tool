@@ -1,0 +1,48 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+}
+
+.section-1 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-2 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/Slide_11.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.Body_wrapper {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+
+.right_arrow {
+    background-color: red;
+    position: absolute;
+    top: 359px;
+    right: 14px;
+    height: 50px;
+    width: 31px;
+}
