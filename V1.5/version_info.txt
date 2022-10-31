@@ -1,7 +1,7 @@
 VSVersionInfo(
     ffi=FixedFileInfo(
-        filevers=(1, 8, 7, 5),
-        prodvers=(1, 8, 7, 5),
+        filevers=(1, 9, 7, 11),
+        prodvers=(1, 9, 7, 11),
         mask=0x3f,
         flags=0x0,
         OS=0x40004,
@@ -25,7 +25,7 @@ VSVersionInfo(
                      StringStruct(u'OriginalFilename', u'eD-Tool.Exe'),
                      StringStruct(
                          u'ProductName', u'eD-Tool'),
-                     StringStruct(u'ProductVersion', u'1.5.3')])
+                     StringStruct(u'ProductVersion', u'1.5.9')])
             ]),
         VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
     ]

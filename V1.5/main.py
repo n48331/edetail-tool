@@ -44,9 +44,13 @@ try:
     shared_dest = f"./output/{project_name}/shared"
     config_dest = f"./output/{project_name}/shared/{project_id}_SharedResource/common"
     slide_names = []
-
-    for i in range(data.max_row-1):
+    max_row = 0
+    for row in data:
+        if not all([cell.value is None for cell in row]):
+            max_row += 1
+    for i in range(max_row-1):
         folder_name = f'{project_name}_S{str(i+1)}_{(data[f"B{i+2}"].value).replace(" ","_")}'
+
         slide_names.append(folder_name)
         popups = data[f'D{i+2}'].value
         if (popups != None):
