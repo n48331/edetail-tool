@@ -1,4 +1,3 @@
-from base64 import encode
 import os
 from PIL import Image
 import random
@@ -117,12 +116,8 @@ def createHtml(id, folder_name, project_name, destination_folder, sl, popupCount
 	</head>
 	<body class="carousel">
 		<div id="mainWrapper">
-       <div data-info="" data-slide="s2" data-flow="f0" class="nav_p2 goToButton"></div>
-		<div data-info="" data-slide="s3" data-flow="f0" class="nav_p3 goToButton"></div>
-		<div data-info="" data-slide="s4" data-flow="f0" class="nav_p4 goToButton"></div>
-		<div data-info="" data-slide="s5" data-flow="f0" class="nav_p8 goToButton"></div>
-		<div data-info="" data-slide="s7" data-flow="f0" class="nav_p13 goToButton"></div>
-		<div data-info="" data-slide="s8" data-flow="f0" class="nav_p14 goToButton"></div>
+       <div data-info="" data-slide="s" data-flow="f0" class="nav_1 goToButton"></div>
+		
         {popup}
 		</div>
 		<script src="../shared/{id}_SharedResource/common/adaptive/zepto.min.js"></script>
