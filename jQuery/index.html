@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <style>
+        #element {
+            position: absolute;
+            top: 232.719px;
+            left: 202px;
+            width: 74px;
+            height: 62px;
+            background: crimson;
+            color: white;
+        }
+        .dup{
+            background-color: aqua;
+        }
+    </style>
+    <script>
+
+
+        $(document).ready(function () {
+            // $(".dup").click(function () {
+            //     var div = $(this).parent();
+            //     console.log(div);
+            // })
+            var i=1;
+            $("#add").click(function () {
+                $("body").append(`<div id="element${i}"><button class="dup">duplicate +</button></div>`)
+                $(`#element${i}`).css({
+                    "position": "absolute",
+            "top": "232.719px",
+            "left": "102px",
+            "width": "74px",
+            "height": "62px",
+            "background": "crimson",
+            "color": "white"
+                })
+                console.log(i);
+               
+                $(`#element${i}`).draggable({
+                    stop: function (event, ui) {
+                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
+    
+                    }
+                }).resizable({
+                    stop: function (event, ui) {
+                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
+                        
+                    }
+                });
+                i++;
+             
+            })
+            // $(".dup").click(function () {
+            //     var div = $(this).parent();
+            //     console.log(div);
+            // })
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <h2 id="pos">pos : </h2> -->
+    <button id="add">Add +</button>
+    </div>
+</body>
+
+</html>
