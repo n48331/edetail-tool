@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<head>
+    <title>jQuery</title>  
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <style>
+      
+       
+       .div{
+        opacity: .8;
+       }
+    </style>
+    <script>
+
+
+        $(document).ready(function () {
+            // $(".dup").click(function () {
+            //     var div = $(this).parent();
+            //     console.log(div);
+            // })
+            var i=1;
+            $("#add").click(function () {
+                $("body").append(`<div id="ele${i}" class="div"><button class="dup">+</button><button class="del">-</button>ID:ele${i}</div>`)
+                $(`#ele${i}`).css({
+                    "position": "absolute",
+            "top": "232.719px",
+            "left": "102px",
+            "width": "74px",
+            "height": "62px",
+            "background": "#F96167",
+            "color": "white"
+                })
+                console.log(i);
+               
+                $(`#ele${i}`).draggable({
+                    stop: function (event, ui) {
+                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
+    
+                    }
+                }).resizable({
+                    stop: function (event, ui) {
+                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
+                        
+                    }
+                });
+                i++;
+             
+            })
+               var j = 1
+                $(document).on('click', '.dup', function(){ 
+                    var pid = $(this).parent().attr('id')
+                    var styles = $(this).parent().css([
+    "position", "top", "left", "width","height"
+  ]);
+                    console.log(styles);
+                    $("body").append(`<div class="div" id="${pid}${j}"><button class="del">-</button>ID:${pid}${j}</div>`)
+                $(`#${pid}${j}`).css(styles)
+                $(`#${pid}${j}`).css({background:"#FCE77D"})
+                $(`#${pid}${j}`).draggable({
+                    stop: function (event, ui) {
+                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
+    
+                    }
+                }).resizable({
+                    resize: function(event, ui) {
+        ui.size.width = ui.originalSize.width;
+    },
+                    stop: function (event, ui) {
+                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
+                        
+                    }
+                });
+                j++;
+                });
+                $(document).on('click', '.del', function(){ 
+                    var pid = $(this).parent()
+                    $(pid).remove()
+                })
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <h2 id="pos">pos : </h2> -->
+    <button id="add">Add +</button>
+    </div>
+</body>
+
+</html>

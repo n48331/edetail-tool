@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <head>
+    <title>jQuery</title>  
+
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -29,7 +31,7 @@
             // })
             var i=1;
             $("#add").click(function () {
-                $("body").append(`<div id="element${i}"><button class="dup">duplicate +</button></div>`)
+                $("body").append(`<div id="element${i}"><button class="dup">+</button></div>`)
                 $(`#element${i}`).css({
                     "position": "absolute",
             "top": "232.719px",
@@ -55,10 +57,12 @@
                 i++;
              
             })
-            // $(".dup").click(function () {
-            //     var div = $(this).parent();
-            //     console.log(div);
-            // })
+            $(document).ready(function () {
+                $(".dup").click(function () {
+                  
+                    console.log(4654);
+                })
+            })
         });
     </script>
 </head>
