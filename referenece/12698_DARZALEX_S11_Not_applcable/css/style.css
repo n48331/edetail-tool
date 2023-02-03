@@ -1,0 +1,61 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+
+}
+
+.close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 73px;
+    right: 67px;
+}
+.body_main {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.section-1 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-2 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background-color: #fff;
+    background: url("../img/Page_17.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.p12_btn{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 416px;
+    right: 284px;
+}
+.p11_btn{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 395px;
+    right: 284px;
+}

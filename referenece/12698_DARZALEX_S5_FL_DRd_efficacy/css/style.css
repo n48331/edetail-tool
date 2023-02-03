@@ -1,0 +1,96 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.s5_popup1  {
+    position: absolute;
+    width: 113px;
+    height: 58px;
+    bottom: 109px;
+    right: 173px;
+    cursor: pointer;
+}
+
+.s5_popup2  {
+    position: absolute;
+    width: 112px;
+    height: 58px;
+    bottom: 109px;
+    right: 50px;
+    cursor: pointer;
+
+}
+.nextSlide  {
+    position: absolute;
+    width: 18px;
+    height: 17px;
+    top: 358px;
+    right: 280px;
+    cursor: pointer;
+}
+.popup_box_1 {
+	background: url("../img/Page_7.jpg") no-repeat;
+	background-size: 1024px 768px;
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	top: 0;
+	display: none;
+	left: 0;
+    z-index: 9;
+}
+
+.popup_box_1 .close {
+    width: 39px;
+    height: 40px;
+    position: absolute;
+    right: 62px;
+    top: 68px;
+}
+.popup_box_2 {
+	background: url("../img/Page_8.jpg") no-repeat;
+	background-size: 1024px 768px;
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	top: 0;
+	display: none;
+    z-index: 9;
+	left: 0;
+}
+
+.popup_box_2 .close {
+    width: 39px;
+    height: 40px;
+    position: absolute;
+    right: 62px;
+    top: 68px;
+    z-index: 9;
+}
+
+.popup_box_3 {
+	background: url("../img/Page_9.jpg") no-repeat;
+	background-size: 1024px 768px;
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	top: 0;
+	display: none;
+    z-index: 9;
+}
+.popup_box_3 .prevSlide {
+    width: 20px;
+    height: 18px;
+    position: absolute;
+    right: 280px;
+    top: 336px;
+    cursor: pointer;
+}

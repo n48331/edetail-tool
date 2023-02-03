@@ -1,0 +1,82 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+
+}
+
+.close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 73px;
+    right: 67px;
+}
+.body_main {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.section-1 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-2 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background-color: #fff;
+    background: url("../img/Page_31.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.p17_btn{
+    position: absolute;
+    width: 113px;
+    height: 58px;
+    top: 601px;
+    right: 50px;
+}
+.s17_popup1 {
+    position: absolute;
+    width: 112px;
+    height: 57px;
+    bottom: 110px;
+    right: 51px;
+    cursor: pointer;
+}
+
+.popup_box_1 {
+	background: url("../img/Page_32.jpg") no-repeat;
+	background-size: 1024px 768px;
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	top: 0;
+	display: none;
+	left: 0;
+    z-index: 9;
+}
+
+.popup_box_1 .close {
+    width: 39px;
+    height: 40px;
+    position: absolute;
+    right: 62px;
+    top: 68px;
+}

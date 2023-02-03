@@ -1,0 +1,83 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+}
+
+.section-1 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-2 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/Page_4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.body_main {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.s3_goToButtons {
+    position: absolute;
+    width: 281px;
+    height: 89px;
+    bottom: 130px;
+    left: 242px;
+}
+
+.Btn1 {
+    position: absolute;
+    width: 137px;
+    height: 42px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    
+}
+.Btn2 {
+    position: absolute;
+    width: 137px;
+    height: 42px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    
+}
+.Btn3 {
+    position: absolute;
+    width: 137px;
+    height: 42px;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    
+}
+.Btn4 {
+    position: absolute;
+    width: 137px;
+    height: 42px;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+
+}

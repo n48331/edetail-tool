@@ -1,0 +1,20 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.refBtn {
+    position: absolute;
+    width: 112px;
+    height: 57px;
+    bottom: 110px;
+    right: 51px;
+    cursor: pointer;
+}

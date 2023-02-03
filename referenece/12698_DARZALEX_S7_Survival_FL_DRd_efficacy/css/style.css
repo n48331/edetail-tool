@@ -1,0 +1,53 @@
+#mainWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 73px;
+    right: 67px;
+    z-index: 9;
+}
+
+.nextSlide{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 416px;
+    right: 284px;
+}
+.prevSlide{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 416px;
+    right: 284px;
+}
+.popup_box {
+	background: url("../img/Page_12.jpg") no-repeat;
+	background-size: 1024px 768px;
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	top: 0;
+	display: none;
+    z-index: 9;
+}
+.popup_box .prevSlide {
+    width: 17px;
+    height: 18px;
+    position: absolute;
+    right: 283px;
+    top: 394px;
+    cursor: pointer;
+}
