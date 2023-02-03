@@ -10,7 +10,12 @@ def goToBtttons():
     pass
 
 
-def generateCssJs(destination_folder, popups, sl):
+def generateCssJs(destination_folder,slides, popups, sl):
+    single_slide = f'''
+ background: url("../img/{slides[0]}.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+'''
     popup_css = ''
     popup_js = ''
     for i in range(len(popups)):
@@ -53,6 +58,7 @@ def generateCssJs(destination_folder, popups, sl):
                 $(".popup_box_{i+1}").fadeOut();
             }});
         '''
+        #TODO add carousal css and config
     css = f'''#mainWrapper {{
         overflow: hidden;
         position: absolute;
@@ -60,9 +66,7 @@ def generateCssJs(destination_folder, popups, sl):
         top: 0;
         width: 1024px;
         height: 768px;
-        background: url("../img/main.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
+        {single_slide if len(slides)<=1 else ''}
     }}
     {popup_css}
     '''
@@ -81,8 +85,8 @@ def generateCssJs(destination_folder, popups, sl):
     js_file.write(js)
     js_file.close()
 
-
-def createHtml(id, folder_name, project_name, destination_folder, sl, popupCount):
+#TODO Add slides as parameter,take a copy of this file
+def createHtml(id, folder_name, destination_folder, sl, popupCount):
 
     popup = ''
     if (popupCount == None):
@@ -94,14 +98,7 @@ def createHtml(id, folder_name, project_name, destination_folder, sl, popupCount
         </div>'''
 
     js = '''
-	<script type="text/javascript">
-			$(function () {
-				$('#mainWrapper').swipeEvents();  //Add main ID or CLASS
-				$("#menu01, #menu02, #menu03, #menu, #menuHover, #menuList, #menu04, #ref, #spc, #pi").bind("touchmove", function (e) {  //Add all the links to prevent the touchmove
-					e.preventDefault();
-				});
-			});
-		</script>
+	
 	'''
     text = f'''<!DOCTYPE html>
 	<html>
@@ -118,9 +115,9 @@ def createHtml(id, folder_name, project_name, destination_folder, sl, popupCount
 		</script>
 		<script src="../shared/{id}_SharedResource/common/framework.js" charset="utf-8"></script>
 	</head>
-	<body class="carousel">
+	<body>
 		<div id="mainWrapper">
-       <div data-info="" data-slide="s" data-flow="f0" class="nav_1 goToButton"></div>
+       
 		
         {popup}
 		</div>
@@ -214,6 +211,7 @@ def createConfig(project_name, slide_names, dest):
             name: "Flow 0",
             }},      
             }},
+             "carSlide": [],
             }};
 
 	'''
@@ -223,7 +221,11 @@ def createConfig(project_name, slide_names, dest):
 
 
 def imageResize(image, size, dest):
-    img = Image.open(image)
-    new_image = img.resize(size)
-    new_image.save(dest)
+    try:
+        img =  Image.open(f'{image}.jpg')
+        img.convert('RGB').resize(size).save(f'{dest}.jpg')
+    except:
+        img =  Image.open(f'{image}.png')
+        img.convert('RGB').resize(size).save(f'{dest}.png')
     return 'Image resized'
+
