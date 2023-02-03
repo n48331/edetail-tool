@@ -1,0 +1,153 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-backface-visibility: hidden;
+    -webkit-user-drag: none;
+}
+body {
+    overflow: hidden;
+    background-color: #000000 !important;
+  }
+input {
+    -webkit-user-select: text !important;
+    /* Chrome, Opera, Safari */
+    -moz-user-select: text !important;
+    /* Firefox 2+ */
+    -ms-user-select: text !important;
+    /* IE 10+ */
+    user-select: text !important;
+    /* Standard syntax */
+}
+.settingOptRV{
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 12%;
+}
+.settingOptRV {
+  display: inline-block;
+  margin: 0.4em;
+  width: 2em;
+  height: 2em;
+  background: white;
+  border-radius: 50%;
+  border: 0.57em solid gray;
+  box-sizing: border-box;
+}
+.settingOptRV:before, .settingOptRV:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "times new roman";
+  font-weight: bold;
+  font-size: 5em;
+  color: gray;
+}
+.settingOptRV:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.hg{
+    background-color: rgb(255 255 0 / 47%);
+    color: red;
+    font-weight: bold;
+}
+
+#container {
+    /*background-color: white;*/
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#bottommenu{
+    position: absolute;
+    right: 260px;
+    bottom: 8px;
+    width: 710px;
+    height: 50px;
+    z-index: 3;
+}
+
+
+.bottommenu1{
+    position: absolute;
+    left: 4px;
+    top: 2px;
+    width: 59px;
+    height: 44px;
+}
+.bottommenu2{
+    position: absolute;
+    left: 67px;
+    top: 2px;
+    width: 70px;
+    height: 44px;
+}
+.bottommenu3{
+    position: absolute;
+    left: 143px;
+    top: 2px;
+    width: 243px;
+    height: 44px;
+}
+.bottommenu4{
+    position: absolute;
+    left: 388px;
+    top: 2px;
+    width: 130px;
+    height: 44px;
+}
+.bottommenu5{
+    position: absolute;
+    right: 105px;
+    top: 2px;
+    width: 84px;
+    height: 44px;
+}
+.bottommenu6{
+    position: absolute;
+    right: 11px;
+    top: 2px;
+    width: 91px;
+    height: 44px;
+}
+
+
+.left_arrow {
+    position: absolute;
+    top: 360px;
+    left: 0;
+    height: 50px;
+    width: 28px;
+    cursor: pointer;
+}
+
+
+.right_arrow {
+    position: absolute;
+    top: 360px;
+    right: 0;
+    height: 50px;
+    width: 28px;
+    cursor: pointer;
+}
+
+#mainWrapper{
+    -ms-transform-origin: top left;
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      width: 1024px;
+      height: 768px;
+      position: relative;
+}
+

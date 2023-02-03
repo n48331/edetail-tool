@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 
 <head>
-    <title>jQuery</title>  
+    <title>jQuery</title>
 
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <style>
-      
-       
-       .div{
-        opacity: .8;
-       }
+        .div {
+            opacity: .8;
+        }
+        #repl{
+            background-color: red;
+            width: 50px;
+            height: 50px;
+        }
     </style>
     <script>
 
@@ -22,72 +25,86 @@
             //     var div = $(this).parent();
             //     console.log(div);
             // })
-            var i=1;
+            var i = 1;
             $("#add").click(function () {
                 $("body").append(`<div id="ele${i}" class="div"><button class="dup">+</button><button class="del">-</button>ID:ele${i}</div>`)
                 $(`#ele${i}`).css({
                     "position": "absolute",
-            "top": "232.719px",
-            "left": "102px",
-            "width": "74px",
-            "height": "62px",
-            "background": "#F96167",
-            "color": "white"
+                    "top": "232.719px",
+                    "left": "102px",
+                    "width": "74px",
+                    "height": "62px",
+                    "background": "#F96167",
+                    "color": "white"
                 })
                 console.log(i);
-               
+
                 $(`#ele${i}`).draggable({
                     stop: function (event, ui) {
-                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
-    
+                        console.log("pos : " + ui.position.top + " x " + ui.position.left + ',' + "width : " + $(event.target).width() + " x " + $(event.target).height())
+
                     }
                 }).resizable({
                     stop: function (event, ui) {
-                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
-                        
+                        console.log("pos : " + ui.position.top + " x " + ui.position.left + ',' + "width : " + $(event.target).width() + " x " + $(event.target).height())
+
                     }
                 });
                 i++;
-             
+
             })
-               var j = 1
-                $(document).on('click', '.dup', function(){ 
-                    var pid = $(this).parent().attr('id')
-                    var styles = $(this).parent().css([
-    "position", "top", "left", "width","height"
-  ]);
-                    console.log(styles);
-                    $("body").append(`<div class="div" id="${pid}${j}"><button class="del">-</button>ID:${pid}${j}</div>`)
-                $(`#${pid}${j}`).css(styles)
-                $(`#${pid}${j}`).css({background:"#FCE77D"})
-                $(`#${pid}${j}`).draggable({
+            var j = 1
+            $(document).on('click', '.dup', function () {
+                var pid = $(this).parent().attr('id')
+                var styles = $(this).parent().css(["position", "top", "left", "width", "height"]);
+                id = `${pid}${j}`
+
+                $("body").append(`<div class="div" id="${id}"><button class="del">-</button>ID:${id}</div>`)
+
+                $(`#${id}`).css(styles)
+                $(`#${id}`).css({ background: "#FCE77D" })
+                $(`#${id}`).draggable({
                     stop: function (event, ui) {
-                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
-    
+                        // console.log("pos : " + ui.position.top + " x " + ui.position.left + ',' + "width : " + $(event.target).width() + " x " + $(event.target).height())
+                        var x = {
+                            position: "absolute",
+                            top: ui.position.top + 100,
+                            left: ui.position.left,
+                            width: $(event.target).width(),
+                            height: $(event.target).height()
+                        }
+                        $(`#repl`).css(x)
                     }
                 }).resizable({
-                    resize: function(event, ui) {
-        ui.size.width = ui.originalSize.width;
-    },
+                    resize: function (event, ui) {
+                        ui.size.width = ui.originalSize.width;
+                    },
                     stop: function (event, ui) {
-                        // $("#pos").text("pos : " + ui.position.top + " x " + ui.position.left +','+"width : " + $(event.target).width() + " x " + $(event.target).height())
-                        
+                        console.log("pos : " + ui.position.top + " x " + ui.position.left + ',' + "width : " + $(event.target).width() + " x " + $(event.target).height())
+
+                        var x = {
+                            position: "absolute",
+                            top: ui.position.top + 100,
+                            left: ui.position.left,
+                            width: $(event.target).width(),
+                            height: $(event.target).height()
+                        }
+                        $(`#repl`).css(x)
                     }
                 });
                 j++;
-                });
-                $(document).on('click', '.del', function(){ 
-                    var pid = $(this).parent()
-                    $(pid).remove()
-                })
+            });
+            $(document).on('click', '.del', function () {
+                var pid = $(this).parent()
+                $(pid).remove()
+            })
         });
     </script>
 </head>
 
 <body>
-    <!-- <h2 id="pos">pos : </h2> -->
+    <div id="repl"></div>
     <button id="add">Add +</button>
-    </div>
 </body>
 
 </html>

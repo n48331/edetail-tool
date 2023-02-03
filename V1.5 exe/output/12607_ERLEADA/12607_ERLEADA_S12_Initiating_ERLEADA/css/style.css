@@ -1,0 +1,13 @@
+#mainWrapper {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1024px;
+        height: 768px;
+        background: url("../img/main.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    

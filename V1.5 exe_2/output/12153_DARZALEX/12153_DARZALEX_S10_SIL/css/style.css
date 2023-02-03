@@ -1,0 +1,193 @@
+#mainWrapper {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1024px;
+        height: 768px;
+        background: url("../img/main.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .s10_popupbtn1 {
+        background-color:#E63D4C;
+        opacity:.8;
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        }
+
+        .popup_box_1 {
+            background: url("../img/Slide_10.jpg") no-repeat;
+            background-size: 1024px 768px;
+            position: absolute;
+            width: 1024px;
+            height: 768px;
+            top: 0;
+            display: none;
+            left: 0;
+        }
+        .popup_box_1 .close {
+            background-color:red;
+            opacity:.5;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 51px;
+            top: 62px;
+            cursor: pointer;
+        }.s10_popupbtn2 {
+        background-color:#B26690;
+        opacity:.8;
+        position: absolute;
+        top: 50px;
+        left: 75px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        }
+
+        .popup_box_2 {
+            background: url("../img/Slide_11.jpg") no-repeat;
+            background-size: 1024px 768px;
+            position: absolute;
+            width: 1024px;
+            height: 768px;
+            top: 0;
+            display: none;
+            left: 0;
+        }
+        .popup_box_2 .close {
+            background-color:red;
+            opacity:.5;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 51px;
+            top: 62px;
+            cursor: pointer;
+        }.s10_popupbtn3 {
+        background-color:#7E4DD2;
+        opacity:.8;
+        position: absolute;
+        top: 50px;
+        left: 120px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        }
+
+        .popup_box_3 {
+            background: url("../img/Slide_12.jpg") no-repeat;
+            background-size: 1024px 768px;
+            position: absolute;
+            width: 1024px;
+            height: 768px;
+            top: 0;
+            display: none;
+            left: 0;
+        }
+        .popup_box_3 .close {
+            background-color:red;
+            opacity:.5;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 51px;
+            top: 62px;
+            cursor: pointer;
+        }.s10_popupbtn4 {
+        background-color:#545784;
+        opacity:.8;
+        position: absolute;
+        top: 50px;
+        left: 165px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        }
+
+        .popup_box_4 {
+            background: url("../img/Slide_13.jpg") no-repeat;
+            background-size: 1024px 768px;
+            position: absolute;
+            width: 1024px;
+            height: 768px;
+            top: 0;
+            display: none;
+            left: 0;
+        }
+        .popup_box_4 .close {
+            background-color:red;
+            opacity:.5;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 51px;
+            top: 62px;
+            cursor: pointer;
+        }.s10_popupbtn5 {
+        background-color:#1F207E;
+        opacity:.8;
+        position: absolute;
+        top: 50px;
+        left: 210px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        }
+
+        .popup_box_5 {
+            background: url("../img/Slide_14.jpg") no-repeat;
+            background-size: 1024px 768px;
+            position: absolute;
+            width: 1024px;
+            height: 768px;
+            top: 0;
+            display: none;
+            left: 0;
+        }
+        .popup_box_5 .close {
+            background-color:red;
+            opacity:.5;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 51px;
+            top: 62px;
+            cursor: pointer;
+        }.s10_popupbtn6 {
+        background-color:#4DB1BF;
+        opacity:.8;
+        position: absolute;
+        top: 50px;
+        left: 255px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        }
+
+        .popup_box_6 {
+            background: url("../img/Slide_15.jpg") no-repeat;
+            background-size: 1024px 768px;
+            position: absolute;
+            width: 1024px;
+            height: 768px;
+            top: 0;
+            display: none;
+            left: 0;
+        }
+        .popup_box_6 .close {
+            background-color:red;
+            opacity:.5;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 51px;
+            top: 62px;
+            cursor: pointer;
+        }
+    

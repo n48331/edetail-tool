@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title>12153</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../shared/12153_SharedResource/common/mainstyle.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="../shared/12153_SharedResource/common/config.js"></script>
+		<script>
+			currentSlide = "s5";
+			document.addEventListener("touchmove", function (e) { e.preventDefault() });
+		</script>
+		<script src="../shared/12153_SharedResource/common/framework.js" charset="utf-8"></script>
+	</head>
+	<body class="carousel">
+		<div id="mainWrapper">
+       <div data-info="" data-slide="s" data-flow="f0" class="nav_1 goToButton"></div>
+		
+        
+		</div>
+		<script src="../shared/12153_SharedResource/common/adaptive/zepto.min.js"></script>
+		<script src="../shared/12153_SharedResource/common/adaptive/underscore-min.js"></script>
+		<script src="../shared/12153_SharedResource/common/adaptive/adaptive.js"></script>
+		<script src="../shared/12153_SharedResource/common/jquery-1.10.2.min.js"></script>
+		<script src="../shared/12153_SharedResource/common/jquery.swipe-events.js" charset="utf-8"></script>
+		<script src="../shared/12153_SharedResource/common/jquery.touchSwipe.min.js"></script>
+		<script src="../shared/12153_SharedResource/common/clm-library-1.4.js" charset="utf-8"></script>
+		<script src="../shared/12153_SharedResource/common/baseScript.js" charset="utf-8"></script>
+		<script src="../shared/12153_SharedResource/common/customScript.js" charset="utf-8"></script>
+		<script src="js/slideScript.js" charset="utf-8"></script>
+		
+	<script type="text/javascript">
+			$(function () {
+				$('#mainWrapper').swipeEvents();  //Add main ID or CLASS
+				$("#menu01, #menu02, #menu03, #menu, #menuHover, #menuList, #menu04, #ref, #spc, #pi").bind("touchmove", function (e) {  //Add all the links to prevent the touchmove
+					e.preventDefault();
+				});
+			});
+		</script>
+	
+	</body>
+	</html>
+	

@@ -1,0 +1,1 @@
+for /d %%X in (*) do (for /d %%a in (%%X) do ( "C:\Program Files (x86)\7-Zip\7zG.exe" a -tzip "%%X.zip" ".\%%a\" ))
