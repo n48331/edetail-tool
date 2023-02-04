@@ -10,12 +10,49 @@ def goToBtttons():
     pass
 
 
-def generateCssJs(destination_folder,slides, popups, sl):
+def slideCss(slides):
+    carousal = '''
+    .body_main {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+    '''
     single_slide = f'''
- background: url("../img/{slides[0]}.jpg");
+        background: url("../img/{slides[0]}");
         background-size: cover;
         background-repeat: no-repeat;
-'''
+        '''
+    css = f'''#mainWrapper {{
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1024px;
+        height: 768px;
+        {single_slide if len(slides)<=1 else ''}
+    }}
+    '''
+    if len(slides)>1:
+        for index,slide in enumerate(slides):
+            carousal +=f'''
+            .section-{index+1} {{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/{slide}");
+    background-size: cover;
+    background-repeat: no-repeat;
+}}
+            ''' 
+    return css+carousal
+
+def generateCssJs(destination_folder,slides, popups, sl):
+
     popup_css = ''
     popup_js = ''
     for i in range(len(popups)):
@@ -31,7 +68,7 @@ def generateCssJs(destination_folder,slides, popups, sl):
         }}
 
         .popup_box_{i+1} {{
-            background: url("../img/{popups[i]}.jpg") no-repeat;
+            background: url("../img/{popups[i]}") no-repeat;
             background-size: 1024px 768px;
             position: absolute;
             width: 1024px;
@@ -58,18 +95,10 @@ def generateCssJs(destination_folder,slides, popups, sl):
                 $(".popup_box_{i+1}").fadeOut();
             }});
         '''
-        #TODO add carousal css and config
-    css = f'''#mainWrapper {{
-        overflow: hidden;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 1024px;
-        height: 768px;
-        {single_slide if len(slides)<=1 else ''}
-    }}
-    {popup_css}
-    '''
+        # TODO add carousal css and config
+
+    css = slideCss(slides) + popup_css
+   
 
     js = f'''$(document).ready(function () {{
 	 {popup_js}
@@ -85,9 +114,30 @@ def generateCssJs(destination_folder,slides, popups, sl):
     js_file.write(js)
     js_file.close()
 
-#TODO Add slides as parameter,take a copy of this file
-def createHtml(id, folder_name, destination_folder, sl, popupCount):
+# TODO Add slides as parameter,take a copy of this file
 
+def makeCarousal(slides):
+    innerHtml=''
+    for idx,slide in enumerate(slides):
+        innerHtml+=f'''
+        <div class="item{' active' if idx==0 else ''}">
+			<section class="section-{idx+1}">
+				<div class="body_main">
+				</div>
+			</section>
+		</div>
+        '''
+    return f'''
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false"
+			data-wrap="false">
+			<div class="carousel-inner" role="listbox">
+            {innerHtml}
+            </div>
+	</div>
+    '''
+
+def createHtml(id, folder_name, destination_folder, sl,slides, popupCount):
+    carousal = makeCarousal(slides)
     popup = ''
     if (popupCount == None):
         popupCount = 0
@@ -108,6 +158,10 @@ def createHtml(id, folder_name, destination_folder, sl, popupCount):
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel="stylesheet" href="../shared/{id}_SharedResource/common/mainstyle.css">
 		<link rel="stylesheet" href="css/style.css">
+        <!-- Carousel external files -->
+	<link rel="stylesheet" href="../shared/{id}_SharedResource/common/carousel/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../shared/{id}_SharedResource/common/carousel/css/carousel-style.css">
+	<!-- Carousel external files -->
 		<script type="text/javascript" src="../shared/{id}_SharedResource/common/config.js"></script>
 		<script>
 			currentSlide = "s{sl}";
@@ -118,7 +172,7 @@ def createHtml(id, folder_name, destination_folder, sl, popupCount):
 	<body>
 		<div id="mainWrapper">
        
-		
+		{carousal}
         {popup}
 		</div>
 		<script src="../shared/{id}_SharedResource/common/adaptive/zepto.min.js"></script>
@@ -130,6 +184,8 @@ def createHtml(id, folder_name, destination_folder, sl, popupCount):
 		<script src="../shared/{id}_SharedResource/common/clm-library-1.4.js" charset="utf-8"></script>
 		<script src="../shared/{id}_SharedResource/common/baseScript.js" charset="utf-8"></script>
 		<script src="../shared/{id}_SharedResource/common/customScript.js" charset="utf-8"></script>
+        <script src="../shared/{id}_SharedResource/common/carousel/js/carouselScript.js" charset="utf-8"></script>
+	<script src="../shared/{id}_SharedResource/common/carousel/js/bootstrap.min.js"></script>
 		<script src="js/slideScript.js" charset="utf-8"></script>
 		{js}
 	</body>
@@ -186,13 +242,13 @@ def renameSharedFiles(src, project_id, img_name):
     return f'{src}/{project_id}_SharedResource/{project_id}_SharedResource.html'
 
 
-def createConfig(project_name, slide_names, dest):
-    # for name in slide_names:
-    slides = ''
-    s = ''
+def createConfig(project_name,carousal_slides, slide_names, dest):
+    slides_zip = ''
+    s = []
     for i in range(len(slide_names)):
-        s += f'"s{str(i+1)}",'
-        slides += f'''
+        s.append(f"s{str(i+1)}")
+        
+        slides_zip += f'''
         s{i+1}: {{
         name: "s{i+1}",
         zipFile: "{slide_names[i]}.zip",
@@ -202,16 +258,16 @@ def createConfig(project_name, slide_names, dest):
     config = f'''var config = {{
         project: "{project_name}",
         slides: {{
-        {slides}
+        {slides_zip}
         }},
         coreflow: {{
             /*First flow should have all the slides*/
             f0: {{
-            content: [{s}],
+            content: {s},
             name: "Flow 0",
             }},      
             }},
-             "carSlide": [],
+             "carSlide": {carousal_slides},
             }};
 
 	'''
@@ -221,11 +277,8 @@ def createConfig(project_name, slide_names, dest):
 
 
 def imageResize(image, size, dest):
-    try:
-        img =  Image.open(f'{image}.jpg')
-        img.convert('RGB').resize(size).save(f'{dest}.jpg')
-    except:
-        img =  Image.open(f'{image}.png')
-        img.convert('RGB').resize(size).save(f'{dest}.png')
+    
+    img =  Image.open(f'{image}')
+    img.convert('RGB').resize(size).save(f'{dest}')
     return 'Image resized'
 
