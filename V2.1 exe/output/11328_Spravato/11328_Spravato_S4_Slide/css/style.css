@@ -11,16 +11,8 @@
         background-repeat: no-repeat;
         
     }
-    
-    .body_main {
-    width: 1024px;
-    height: 768px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
     .s4_popupbtn1 {
-        background-color:#9B5C1D;
+        background-color:#92B5D7;
         opacity:.8;
         position: absolute;
         top: 50px;
@@ -50,7 +42,7 @@
             top: 62px;
             cursor: pointer;
         }.s4_popupbtn2 {
-        background-color:#E121F9;
+        background-color:#68E3D7;
         opacity:.8;
         position: absolute;
         top: 50px;

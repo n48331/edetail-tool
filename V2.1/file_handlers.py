@@ -31,15 +31,7 @@ def carousalBtn(x=1):
 
 
 def slideCss(slides):
-    carousal = '''
-    .body_main {
-    width: 1024px;
-    height: 768px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-    '''
+    carousal = ''
     single_slide = f'''
         background: url("../img/{slides[0]}");
         background-size: cover;
@@ -56,6 +48,15 @@ def slideCss(slides):
     }}
     '''
     if len(slides)>1:
+        carousal = '''
+    .body_main {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+    '''
         for index,slide in enumerate(slides):
             carousal +=f'''
             .section-{index+1} {{
@@ -69,6 +70,7 @@ def slideCss(slides):
     background-repeat: no-repeat;
 }}
             ''' 
+        
     return css+carousal
 
 def generateCssJs(destination_folder,slides, popups, sl):
@@ -157,7 +159,7 @@ def makeCarousal(slides):
     '''
 
 def createHtml(id, folder_name, destination_folder, sl,slides, popupCount,buttons):
-    carousal = makeCarousal(slides)
+    carousal = makeCarousal(slides) if len(slides)>1 else ''
     popup = ''
     if (popupCount == None):
         popupCount = 0
