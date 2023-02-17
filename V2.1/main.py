@@ -81,6 +81,7 @@ try:
             for slide in  slides:            
                 img_name = f'{image_folder}/{slide}'
                 IR(img_name, (2048, 1536), f'{destination_folder}/img/{slide}')
+            img_name = f'{image_folder}/{slides[0]}'
             IR(img_name, (1024, 768),
                 f'{destination_folder}/{folder_name}-full.jpg')
             IR(img_name, (200, 150),
