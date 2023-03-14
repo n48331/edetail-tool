@@ -177,7 +177,7 @@ def createHtml(id, folder_name, destination_folder, sl,slides, popupCount,button
 	<head>
 		<meta charset="utf-8">
 		<title>{id}</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../shared/{id}_SharedResource/common/mainstyle.css">
 		<link rel="stylesheet" href="css/style.css">
         <!-- Carousel external files -->
