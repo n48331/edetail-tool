@@ -1,88 +1,89 @@
-[32mexcel file accessed........[0m
-[34m---------------- Checking all required folders are present ----------------[0m
-[37mThe folder ./images already exists.[0m
-[32mpdf folder with pdf : True (test.pdf)[0m
-[32msource_folder : True (./boiler_plate/slide)[0m
-[32mimage folder : True (./images)[0m
-[32mshared_src : True (./boiler_plate/shared)[0m
-[32mpoppler : True (poppler-22.04.0\Library\bin)[0m
-[34m---------------- Checking Complete ----------------[0m
-[37mproject id: 11325[0m
-[37mproject name: 11325_Spravato[0m
-[34m---------------- Searching and converting pdf ----------------[0m
-[32m'test.pdf' with 14 pages fetched...........[0m
-[37mExtracted Page1 image[0m
-[37mExtracted Page2 image[0m
-[37mExtracted Page3 image[0m
-[37mExtracted Page4 image[0m
-[37mExtracted Page5 image[0m
-[37mExtracted Page6 image[0m
-[37mExtracted Page7 image[0m
-[37mExtracted Page8 image[0m
-[37mExtracted Page9 image[0m
-[37mExtracted Page10 image[0m
-[37mExtracted Page11 image[0m
-[37mExtracted Page12 image[0m
-[37mExtracted Page13 image[0m
-[37mExtracted Page14 image[0m
-[34m--------------- images saved in images folder -------------[0m
-[34m----------------7 KMs-----------------[0m
-[34m--------------- KM 1- 1 slide(s) | 0 popup(s) ---------------[0m
-[32mHTML files and required folders created.......[0m
-[32mGenerated CSS and JS..........[0m
-[37mSlide image resized and saved.......[0m
-[37mFull image resized and saved........[0m
-[37mThumb image resized and saved........[0m
-[34m--------------- KM 2- 1 slide(s) | 0 popup(s) ---------------[0m
-[32mHTML files and required folders created.......[0m
-[32mGenerated CSS and JS..........[0m
-[37mSlide image resized and saved.......[0m
-[37mFull image resized and saved........[0m
-[37mThumb image resized and saved........[0m
-[34m--------------- KM 3- 1 slide(s) | 0 popup(s) ---------------[0m
-[32mHTML files and required folders created.......[0m
-[32mGenerated CSS and JS..........[0m
-[37mSlide image resized and saved.......[0m
-[37mFull image resized and saved........[0m
-[37mThumb image resized and saved........[0m
-[34m--------------- KM 4- 1 slide(s) | 5 popup(s) ---------------[0m
-[32mHTML files and required folders created.......[0m
-[32mGenerated CSS and JS..........[0m
-[37mSlide image resized and saved.......[0m
-[37mFull image resized and saved........[0m
-[37mThumb image resized and saved........[0m
-[37mPopup 1 image resized and saved.......[0m
-[37mPopup 2 image resized and saved.......[0m
-[37mPopup 3 image resized and saved.......[0m
-[37mPopup 4 image resized and saved.......[0m
-[37mPopup 5 image resized and saved.......[0m
-[34m--------------- KM 5- 3 slide(s) | 0 popup(s) ---------------[0m
-[32mHTML files and required folders created.......[0m
-[32mGenerated CSS and JS..........[0m
-[37mSlide image resized and saved.......[0m
-[37mSlide image resized and saved.......[0m
-[37mSlide image resized and saved.......[0m
-[37mFull image resized and saved........[0m
-[37mThumb image resized and saved........[0m
-[34m--------------- KM 6- 1 slide(s) | 0 popup(s) ---------------[0m
-[32mHTML files and required folders created.......[0m
-[32mGenerated CSS and JS..........[0m
-[37mSlide image resized and saved.......[0m
-[37mFull image resized and saved........[0m
-[37mThumb image resized and saved........[0m
-[34m--------------- KM 7- 1 slide(s) | 0 popup(s) ---------------[0m
-[32mHTML files and required folders created.......[0m
-[32mGenerated CSS and JS..........[0m
-[37mSlide image resized and saved.......[0m
-[37mFull image resized and saved........[0m
-[37mThumb image resized and saved........[0m
-[37mShared resource folder created..........[0m
-[37mconfig file added..............[0m
-[32mKM names excel file generated[0m
-[31mimage folder deleted...........[0m
-[32mProject folder compressed...........[0m
-[31mProject output folder deleted...........[0m
-[31mSource pdf deleted...........[0m
-[37mTotal proccess time: 9.38 seconds.[0m
-[32mProcess Finished[0m
+excel file accessed........
+---------------- Checking all required folders are present ----------------
+The folder 'images' created.
+pdf folder with pdf : True (test.pdf)
+source_folder : True (./boiler_plate/slide)
+image folder : True (./images)
+shared_src : True (./boiler_plate/shared)
+poppler : True (poppler-22.04.0\Library\bin)
+---------------- Checking Complete ----------------
+project id: 11325
+project name: 11325_Spravato
+---------------- Searching and converting pdf ----------------
+'test.pdf' with 14 pages fetched...........
+Extracted Page1 image
+Extracted Page2 image
+Extracted Page3 image
+Extracted Page4 image
+Extracted Page5 image
+Extracted Page6 image
+Extracted Page7 image
+Extracted Page8 image
+Extracted Page9 image
+Extracted Page10 image
+Extracted Page11 image
+Extracted Page12 image
+Extracted Page13 image
+Extracted Page14 image
+--------------- images saved in images folder -------------
+----------------7 KMs-----------------
+--------------- KM 1- 1 slide(s) | 0 popup(s) ---------------
+HTML files and required folders created.......
+Generated CSS and JS..........
+Slide_1.jpg image resized and saved.......
+Full image resized and saved........
+Thumb image resized and saved........
+--------------- KM 2- 1 slide(s) | 0 popup(s) ---------------
+HTML files and required folders created.......
+Generated CSS and JS..........
+Slide_2.jpg image resized and saved.......
+Full image resized and saved........
+Thumb image resized and saved........
+--------------- KM 3- 1 slide(s) | 0 popup(s) ---------------
+HTML files and required folders created.......
+Generated CSS and JS..........
+Slide_3.jpg image resized and saved.......
+Full image resized and saved........
+Thumb image resized and saved........
+--------------- KM 4- 1 slide(s) | 5 popup(s) ---------------
+HTML files and required folders created.......
+Generated CSS and JS..........
+Slide_4.jpg image resized and saved.......
+Full image resized and saved........
+Thumb image resized and saved........
+Popup 1 image resized and saved.......
+Popup 2 image resized and saved.......
+Popup 3 image resized and saved.......
+Popup 4 image resized and saved.......
+Popup 5 image resized and saved.......
+--------------- KM 5- 3 slide(s) | 0 popup(s) ---------------
+HTML files and required folders created.......
+Generated CSS and JS..........
+Slide_10.jpg image resized and saved.......
+Slide_11.jpg image resized and saved.......
+Slide_12.jpg image resized and saved.......
+Full image resized and saved........
+Thumb image resized and saved........
+--------------- KM 6- 1 slide(s) | 0 popup(s) ---------------
+HTML files and required folders created.......
+Generated CSS and JS..........
+Slide_13.jpg image resized and saved.......
+Full image resized and saved........
+Thumb image resized and saved........
+--------------- KM 7- 1 slide(s) | 0 popup(s) ---------------
+HTML files and required folders created.......
+Generated CSS and JS..........
+Slide_14.jpg image resized and saved.......
+Full image resized and saved........
+Thumb image resized and saved........
+--------------- slides template complete -------------
+Shared resource folder created..........
+config file added..............
+KM names excel file generated
+image folder deleted...........
+Project folder compressed...........
+Project output folder deleted...........
+Source pdf deleted...........
+Total proccess time: 10.11 seconds.
+Process Finished
 Process Finished

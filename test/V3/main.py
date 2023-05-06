@@ -49,7 +49,8 @@ def log(message, color=colorama.Fore.WHITE):
     elif color == 3:
         color = colorama.Fore.BLUE
 
-    print(color + message + colorama.Style.RESET_ALL)
+    # print(color + message + colorama.Style.RESET_ALL)
+    print(message)
 
 
 def Mbox(title, text, style):
@@ -85,6 +86,7 @@ try:
             break
     if pdf == '':
         log("Cant continue without pdf. please place pdf in pdf folder in root path", 1)
+        shutil.rmtree(image_folder)
         raise pdfError
     log(f'pdf folder with pdf : {pdf != ""} ({pdf_filename})',
         2 if pdf != "" else 1)
@@ -164,7 +166,7 @@ try:
             for slide in slides:
                 img_name = f'{image_folder}/{slide}'
                 IR(img_name, (2048, 1536), f'{destination_folder}/img/{slide}')
-                log('Slide image resized and saved.......')
+                log(f'{slide} image resized and saved.......')
             img_name = f'{image_folder}/{slides[0]}'
             IR(img_name, (1024, 768),
                 f'{destination_folder}/{folder_name}-full.jpg')
@@ -185,9 +187,7 @@ try:
         except:
             log('Popup image IR error', 1)
             raise popupError
-
-
-
+    log('--------------- slides template complete -------------', 3)
 
     if not os.path.exists(shared_dest):
         shutil.copytree(shared_src, shared_dest)
