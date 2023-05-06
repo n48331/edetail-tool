@@ -125,7 +125,7 @@ except:
     Mbox(f'ERROR !',
          'Something went wrong.....', 0x20)
 
-
-print('Process Finished')
-Mbox(f'Hurray Process Finished successfully !',
-     'Check output folder for output.....', 0x40)
+finally:
+    print('Process Finished')
+    Mbox(f'Hurray Process Finished successfully !',
+        'Check output folder for output.....', 0x40)
