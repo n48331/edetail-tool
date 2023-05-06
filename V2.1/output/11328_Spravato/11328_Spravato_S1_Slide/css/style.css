@@ -1,0 +1,51 @@
+#mainWrapper {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1024px;
+        height: 768px;
+        
+    }
+    
+    .body_main {
+    width: 1024px;
+    height: 768px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+    
+            .section-1 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/Slide_1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+            
+            .section-2 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/Slide_4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+            
+            .section-3 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 768px;
+    background: url("../img/Slide_4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+            

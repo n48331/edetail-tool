@@ -4,27 +4,27 @@ var config = {
         
         s1: {
         name: "s1",
-        zipFile: "11328_Spravato_S1_Materiał_informacyjny.zip",
+        zipFile: "11328_Spravato_S1_Slide.zip",
         },
         
         s2: {
         name: "s2",
-        zipFile: "11328_Spravato_S2_Założenia_programu.zip",
+        zipFile: "11328_Spravato_S2_Slide.zip",
         },
         
         s3: {
         name: "s3",
-        zipFile: "11328_Spravato_S3_Założenia_programu.zip",
+        zipFile: "11328_Spravato_S3_Slide.zip",
         },
         
         s4: {
         name: "s4",
-        zipFile: "11328_Spravato_S4_Jak_przystąpić_do.zip",
+        zipFile: "11328_Spravato_S4_Slide.zip",
         },
         
         s5: {
         name: "s5",
-        zipFile: "11328_Spravato_S5_Jak_przystąpić_do.zip",
+        zipFile: "11328_Spravato_S5_Slide.zip",
         },
         
         },
@@ -35,7 +35,7 @@ var config = {
             name: "Flow 0",
             },      
             },
-             "carSlide": ['s2', 's3'],
+             "carSlide": ['s1', 's2', 's3'],
             };
 
 	

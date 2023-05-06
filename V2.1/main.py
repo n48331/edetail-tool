@@ -99,7 +99,7 @@ try:
     if not os.path.exists(shared_dest):
         shutil.copytree(shared_src, shared_dest)
     sharedHTML = renameSharedFiles(shared_dest, project_id,
-                                    f'{image_folder}/{data["C2"].value}')
+                                    f'{image_folder}/{(data["C2"].value).split(",")[0]}')
     generateSharedHtml(project_id, sharedHTML)
     createConfig(project_name,carousal_slides, slide_names, config_dest)
 
@@ -120,6 +120,7 @@ except FileNotFoundError:
         "ERROR : Make sure ['images','boiler_plate','data.xlsx'] are present in same folder or some files are missing in boiler_plate")
     Mbox('ERROR',
          "Make sure ['images','boiler_plate','data.xlsx'] are present in same folder or some files are missing in boiler_plate folder.check readme file for folder stucture", 0x20)
+
 except:
     Mbox(f'ERROR !',
          'Something went wrong.....', 0x20)
